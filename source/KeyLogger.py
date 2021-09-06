@@ -35,20 +35,26 @@ def on_press(key):
 
     if strip_key in shortcut:
         pressed[strip_key] = True
+
+        if all(list(pressed.values())):
+            if not running:
+                Thread(target=ImageFilter.run).start()
+            else:
+                ImageFilter.close()
+            
+            for s in shortcut:
+                pressed[s] = False
+        
+        running = not running
     
     if strip_key in pause_shortcut:
         pressed_pause[strip_key] = True
 
-    if all(list(pressed.values())):
-        if not running:
-            Thread(target=ImageFilter.run).start()
-        else:
-            ImageFilter.close()
+        if all(list(pressed_pause.values())):
+            ImageFilter.pause()
         
-        running = not running
-    
-    if all(list(pressed_pause.values())):
-        ImageFilter.pause()
+            for s in pause_shortcut:
+                pressed_pause[s] = False
 
 
 def on_release(key):
