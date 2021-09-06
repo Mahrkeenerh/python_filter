@@ -20,7 +20,7 @@ Type: `pip install -r source/requirements.txt`
 Open [config.json](source/config.json) in a text editor of your choice (notepad, vs, vim ...).
 Edit the settings to your liking. To get key codes, open [KeyCode.py](KeyCode.py) and it will show you the key codes of keys you are pressing.
 
-If you change the settings while the program is running, you need to manually close it and reopen it again. Close process: `Task Manager -> Details -> pythonw.exe`. Then open [startup.pyw](startup.pyw).
+If you change the settings while the program is running, you need to manually close it and reopen it again. Close program by righ-clicking on the system tray icon (right bottom arrow pointing up) and choose Quit. Then open [startup.pyw](startup.pyw).
 
 # Launch on pc start
 Go to `shell:startup` (either as file path, or Win + R). Copy a shortcut of `startup.pyw` into this folder.
