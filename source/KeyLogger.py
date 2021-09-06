@@ -34,27 +34,39 @@ def on_press(key):
     strip_key = str(key).replace("'", "")
 
     if strip_key in shortcut:
-        pressed[strip_key] = True
+        for s in shortcut:
+            if s == strip_key:
+                pressed[s] = True
+                break
 
-        if all(list(pressed.values())):
-            if not running:
-                Thread(target=ImageFilter.run).start()
-            else:
-                ImageFilter.close()
-            
-            for s in shortcut:
-                pressed[s] = False
-        
-        running = not running
+            if not pressed[s]:
+                break
     
     if strip_key in pause_shortcut:
-        pressed_pause[strip_key] = True
+        for s in pause_shortcut:
+            if s == strip_key:
+                pressed_pause[s] = True
+                break
+            
+            if not pressed_pause[s]:
+                break
 
-        if all(list(pressed_pause.values())):
-            ImageFilter.pause()
+    if all(list(pressed.values())):
+        if not running:
+            Thread(target=ImageFilter.run).start()
+        else:
+            ImageFilter.close()
         
-            for s in pause_shortcut:
-                pressed_pause[s] = False
+        for s in shortcut:
+            pressed[s] = False
+    
+        running = not running
+
+    if all(list(pressed_pause.values())):
+        ImageFilter.pause()
+    
+        for s in pause_shortcut:
+            pressed_pause[s] = False
 
 
 def on_release(key):
