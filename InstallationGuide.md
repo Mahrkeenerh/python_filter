@@ -14,7 +14,7 @@ Download this repo somewhere to your pc.
 
 Open Terminal inside the source folder (type cmd to path and enter).
 
-Type: `pip install -r requirements.txt`
+Type: `pip install -r source/requirements.txt`
 
 # Customize settings
 Open [config.json](source/config.json) in a text editor of your choice (notepad, vs, vim ...).
