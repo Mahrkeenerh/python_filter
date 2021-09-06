@@ -1,5 +1,5 @@
 {
     "resolution_downscale": 2,
-    "shortcut": ["Key.cmd", "\\x03"],
-    "pause": ["p"]
+    "shortcut": ["Key.ctrl_l", "Key.cmd", "\\x03"],
+    "pause": ["Key.alt_l", "p"]
 }
