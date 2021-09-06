@@ -14,7 +14,7 @@ def load():
 
     global shortcut, pressed, pause_shortcut, pressed_pause
 
-    with open("config.json") as json_file:
+    with open("source/config.json") as json_file:
         config = json.load(json_file)
 
     shortcut = config["shortcut"]

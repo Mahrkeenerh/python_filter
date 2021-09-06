@@ -12,7 +12,7 @@ running = False
 
 def load():
 
-    with open("config.json") as json_file:
+    with open("source/config.json") as json_file:
         config = json.load(json_file)
 
     return config
